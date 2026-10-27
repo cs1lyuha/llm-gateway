@@ -1,0 +1,14 @@
+[project]
+name = "llm-gateway"
+version = "0.1.0"
+description = "Gateway de producție în fața API-urilor LLM: chei per client, rate limit, bugete, cache, mascare PII, fallback, tracing și metrici"
+requires-python = ">=3.11"
+dependencies = ["fastapi>=0.115", "pydantic>=2.6", "uvicorn>=0.30"]
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=1.0"]
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
